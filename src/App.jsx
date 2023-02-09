@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import './App.css'
 
@@ -61,19 +61,37 @@ function App() {
           )}
         </div>
         <div className='flex justify-around py-5'>
-            <a
-            id="tweet-quote"
-            target={'_blank'}
-            href={`https://twitter.com/intent/tweet?text=%22${randomQuote.text}%22%0A%0A%20-%20${randomQuote.author ? randomQuote.author : 'Anonymous'}`}
-            className='my-auto px-2 py-2 rounded'
-            style={{
-              backgroundColor: color
-            }}
+            <div
+            id='media-buttons'
+            className='flex justify-around'
             >
-              <FontAwesomeIcon 
-              style={{color: 'white'}}
-              icon={faTwitter} />
-            </a>
+              <a
+              id="tweet-quote"
+              target={'_blank'}
+              href={`https://twitter.com/intent/tweet?text=%22${randomQuote.text}%22%0A%0A%20-%20${randomQuote.author ? randomQuote.author : 'Anonymous'}`}
+              className='px-2 py-2 rounded'
+              style={{
+                backgroundColor: color
+              }}
+              >
+                <FontAwesomeIcon 
+                style={{color: 'white'}}
+                icon={faTwitter} />
+              </a>
+              <a
+              id="github"
+              target={'_blank'}
+              href={`https://github.com/nicolanda/random-query-freecodecamp`}
+              className='mx-2 px-2 py-2 rounded'
+              style={{
+                backgroundColor: color
+              }}
+              >
+                <FontAwesomeIcon 
+                style={{color: 'white'}}
+                icon={faGithub} />
+              </a>
+            </div>
           <button
           id='new-quote'
           onClick={getRandomQuote}
